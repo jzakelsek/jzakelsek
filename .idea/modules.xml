@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Prevozi.iml" filepath="$PROJECT_DIR$/.idea/modules/Prevozi.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Prevozi.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Prevozi.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/data/Prevozi.data.iml" filepath="$PROJECT_DIR$/.idea/modules/data/Prevozi.data.iml" />
+    </modules>
+  </component>
+</project>
