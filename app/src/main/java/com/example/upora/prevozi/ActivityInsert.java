@@ -11,9 +11,9 @@ import com.example.upora.data.Driver;
 import com.example.upora.data.Driving;
 
 
-public class MainActivity extends AppCompatActivity {
+public class ActivityInsert extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();  //se generira samo, za spodnji TAG
+    private static final String TAG = ActivityInsert.class.getSimpleName();  //se generira samo, za spodnji TAG
     //Driver oseba;
     EditText etName;
     EditText etAge;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);    //objekti se sami generirajo, da ne pišemo na roke  //iz XML parsanje
+        setContentView(R.layout.activity_insert);    //objekti se sami generirajo, da ne pišemo na roke  //iz XML parsanje
 
         // oseba = new Driver("jakob", 20, 55);
         //  System.out.println(oseba);
