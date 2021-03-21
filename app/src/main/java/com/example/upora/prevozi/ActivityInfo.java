@@ -35,11 +35,7 @@ public class ActivityInfo extends AppCompatActivity {
 
       // etTextView.setText(message);
 
-
-
-
-
-            //Log.i(TAG, value);
+      //Log.i(TAG, value);
 
         }
 

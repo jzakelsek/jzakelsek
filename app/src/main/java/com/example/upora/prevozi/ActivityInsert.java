@@ -12,9 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.upora.data.Driver;
-import com.example.upora.data.Driving;
-
 
 public class ActivityInsert extends AppCompatActivity {
     public static final int ACTIVITY_ID=101;  //vsaka aktivnost mora met svoj id
@@ -43,6 +40,8 @@ public class ActivityInsert extends AppCompatActivity {
     EditText etAge;
     EditText etTime;
     Button btnAction;
+
+    int st_voznikov;
 
    // Driving driving;  //dodamo v Driving
 
@@ -113,23 +112,27 @@ public class ActivityInsert extends AppCompatActivity {
             double cas = Double.parseDouble(etTime.getText().toString());
 
             Intent intent = new Intent();
-            intent.putExtra("kluc1", ime);
-            intent.putExtra("kljuc2", starost);
-            intent.putExtra("kljuc3", cas);
+            intent.putExtra(ActivityMain.KEY_NAME, ime);
+            intent.putExtra(ActivityMain.KEY_AGE, starost);
+            intent.putExtra(ActivityMain.KEY_TIME, cas);
+
             setResult(Activity.RESULT_OK, intent);
 
+            Log.i(TAG, "PODATKI ZA PRENOS v DRUGO AKTIVNOST:" + ime +" "+starost+" "+cas);
 
 
-            etName.setText("");    //pobriše vnosno polje
-           etAge.setText("");
-           etTime.setText("");
+           //etName.setText("");    //pobriše vnosno polje
+           //etAge.setText("");
+           //etTime.setText("");
 
+
+            finish();
           // Log.i(TAG, "Inserted:" + inserted.toString());     //izpis v Logcat -ni potrebno
           // Log.i(TAG, "Driving Driver:" + driving.toString());
 
-            Toast.makeText(this, "New driver is inserted", Toast.LENGTH_LONG).show();
+            //Toast.makeText(this, "New driver is inserted", Toast.LENGTH_LONG).show();
 
-            returnValue(DATA_UPDATE); //da je OK
+            //returnValue(DATA_UPDATE); //da je OK
 
         } catch (Exception e){
 
@@ -138,11 +141,19 @@ public class ActivityInsert extends AppCompatActivity {
        }
     }
 
-    /*
-    public void onClickInfo(View view) {
-       Log.i(TAG, "V seznamu je: " + driving.size() + " elementov");
 
-    }*/
+    public void onClickInfo(View view) {
+       Log.i(TAG, "V seznamu je: " + "?" + " elementov");
+
+/*
+        String value="AVTOR: Janko Zakelsek, Ptujska Gora, starost 38 let, RIT izredni ";
+        public void onClickOpenActivityInfoForm(View view) {
+            Intent i = new Intent(this, ActivityInfo.class);   //odprem aktivnost oz intent
+            i.putExtra("key", value);
+            startActivity(i);
+
+  */
+    }
 
     private void returnValue(int dataStatus){
         Intent data = getIntent();
