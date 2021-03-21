@@ -9,13 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prevozi">
-        <activity android:name=".ActivityMain"></activity>
-        <activity android:name=".ActivityInsert">
-            <intent-filter>
+        <activity android:name=".ActivityQr" />
+        <activity android:name=".ActivityInfo" />
+        <activity
+            android:name=".ActivityMain"
+            android:launchMode="singleInstance"> <!-- android:launchMode="singleInstance" - to dodamo -->
+
+            <intent-filter> <!-- prestavimo, da se nova forma odpre -->
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActivityInsert"
+            android:launchMode="singleInstance"> <!-- samo ena instanca tega objekta, isto kot zgoraj -->
+
         </activity>
     </application>
 
