@@ -28,33 +28,18 @@ public class ActivityInsert extends AppCompatActivity {
     public static final int DATA_UPDATE = 1;
     //----------------------------------------------------------------------------
 
-
-
-
-
-
     int formMode;
 
-    //Driver oseba;
     EditText etName;
     EditText etAge;
     EditText etTime;
     Button btnAction;
 
-    int st_voznikov;
-
-   // Driving driving;  //dodamo v Driving
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);    //objekti se sami generirajo, da ne pišemo na roke  //iz XML parsanje
-
-        // oseba = new Driver("jakob", 20, 55);
-        //  System.out.println(oseba);
-        //  Log.i(TAG, "Moj izpis: "+oseba.toString());   //ustvarim constraint field in MyActivity
-
-        //driving = new Driving("Bistrica");  //dodamo v Driving
 
         etName = findViewById(R.id.etName);
         etAge = findViewById(R.id.etAge);
@@ -92,7 +77,6 @@ public class ActivityInsert extends AppCompatActivity {
         }
     }
 
-
     public void onClickAdd(View view) {   //dodam metodo
         try {
 
@@ -120,17 +104,9 @@ public class ActivityInsert extends AppCompatActivity {
 
             Log.i(TAG, "PODATKI ZA PRENOS v DRUGO AKTIVNOST:" + ime +" "+starost+" "+cas);
 
-
-           //etName.setText("");    //pobriše vnosno polje
-           //etAge.setText("");
-           //etTime.setText("");
-
-
             finish();
-          // Log.i(TAG, "Inserted:" + inserted.toString());     //izpis v Logcat -ni potrebno
-          // Log.i(TAG, "Driving Driver:" + driving.toString());
 
-            //Toast.makeText(this, "New driver is inserted", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "New driver is inserted", Toast.LENGTH_LONG).show();
 
             //returnValue(DATA_UPDATE); //da je OK
 
@@ -143,16 +119,9 @@ public class ActivityInsert extends AppCompatActivity {
 
 
     public void onClickInfo(View view) {
-       Log.i(TAG, "V seznamu je: " + "?" + " elementov");
+       Log.i(TAG, "V seznamu je: " + "???" + " elementov");
 
-/*
-        String value="AVTOR: Janko Zakelsek, Ptujska Gora, starost 38 let, RIT izredni ";
-        public void onClickOpenActivityInfoForm(View view) {
-            Intent i = new Intent(this, ActivityInfo.class);   //odprem aktivnost oz intent
-            i.putExtra("key", value);
-            startActivity(i);
 
-  */
     }
 
     private void returnValue(int dataStatus){

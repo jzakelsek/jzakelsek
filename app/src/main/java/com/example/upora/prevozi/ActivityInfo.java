@@ -9,11 +9,6 @@ import android.widget.TextView;
 
 public class ActivityInfo extends AppCompatActivity {
 
-
-
-
-    //private static final String TAG = ActivityMain.class.getSimpleName() ;
-
     TextView etTextView;
 
     @Override
@@ -22,20 +17,12 @@ public class ActivityInfo extends AppCompatActivity {
         setContentView(R.layout.activity_info);
 
 
-
-        //Intent secondIntent = getIntent();
-        //String message = secondIntent.getStringExtra("key");
-
-
       etTextView = (TextView) findViewById(R.id.textViewInfo);
 
-      Bundle b1 = getIntent().getExtras();
+      Bundle b1 = getIntent().getExtras();              //kdo je sprožil toto aktivnost
       String s1 = b1.getString("key");
-      etTextView.setText(s1);
+      etTextView.setText(s1);                            //prikažem sporočilo
 
-      // etTextView.setText(message);
-
-      //Log.i(TAG, value);
 
         }
 
