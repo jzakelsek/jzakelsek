@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Prevozi</string>
+    <string name="btn_insert_new_driver">Vnesi novega voznika</string>
+    <string name="btn_add">Dodaj</string>
+    <string name="btn_info">Informacije</string>
+    <string name="btn_exit">Izhod</string>
+
+    <string name="btn_open_web">Spletna stran</string>
+    <string name="btn_update_old_driver">Posodobi starega voznika</string>
+    <string name="btn_insert_new_driver_qr">Vnesi novega voznika QR</string>
+    <string name="btn_exit_main">Izhod</string>
+    <string name="btn_insert_new_driver_main">Vnesi novega voznika</string>
+    <string name="toast_go">Pojdi za %s!</string>
+
+</resources>

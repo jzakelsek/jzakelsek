@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Prevozi</string>
+    <string name="btn_insert_new_driver">Insert new Driver</string>
+    <string name="btn_add">Add</string>
+    <string name="btn_info">Info</string>
+    <string name="btn_exit">Exit</string>
+
+    <string name="btn_open_web">Open Web</string>
+    <string name="btn_update_old_driver">Update old Driver</string>
+    <string name="btn_insert_new_driver_qr">Insert new Driver QR</string>
+    <string name="btn_exit_main">EXIT</string>
+    <string name="btn_insert_new_driver_main">Insert New Driver</string>
+    <string name="toast_go">Go for %s!</string>
 </resources>

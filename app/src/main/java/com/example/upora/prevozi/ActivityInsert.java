@@ -70,13 +70,13 @@ public class ActivityInsert extends AppCompatActivity {
 
     void updateGUI() {
         if (formMode == FORM_MODE_INSERT) {
-            btnAction.setText("Insert");
+            btnAction.setText("Vnos");
             }
         if(formMode==FORM_MODE_UPDATE) {
-        btnAction.setText("Update");
+        btnAction.setText("Posodobitev");
         }
     }
-
+//---------------------------------------------------------------------------------------------------------------------------------------------
     public void onClickAdd(View view) {   //dodam metodo
         try {
 
@@ -118,11 +118,11 @@ public class ActivityInsert extends AppCompatActivity {
     }
 
 
-    public void onClickInfo(View view) {
-       Log.i(TAG, "V seznamu je: " + "???" + " elementov");
+    //---------------------------------------------------------------------------------------------------------------------------------------------
 
 
-    }
+
+
 
     private void returnValue(int dataStatus){
         Intent data = getIntent();
@@ -135,6 +135,10 @@ public class ActivityInsert extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.i(TAG, "Pause"+formMode);
+    }
+
+    public void onClickInfo(View view) {
+        Log.i(TAG, "V seznamu je: " + "???" + " elementov");
     }
 
     public void onClickExit(View view) {
