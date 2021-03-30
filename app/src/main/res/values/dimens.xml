@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="my_padding">5dp</dimen>
+    <dimen name="my_margins">30dp</dimen>
+    <dimen name="my_font_size">16dp</dimen>
+
+
+</resources>

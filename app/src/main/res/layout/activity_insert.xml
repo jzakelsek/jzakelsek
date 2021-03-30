@@ -13,6 +13,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.17" />
 
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -21,6 +22,8 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="8dp"
         android:text="@string/btn_insert_new_driver"
+
+
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,12 +59,10 @@
 
     <ImageView
         android:id="@+id/imageView4"
-        android:layout_width="242dp"
-        android:layout_height="147dp"
-        android:layout_marginBottom="15dp"
+        android:layout_width="136dp"
+        android:layout_height="101dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/car_" />
 
@@ -70,13 +71,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-        android:onClick="onClickAdd"
-        android:text="@string/btn_add"
-
-        android:textColor="@color/grey"
-
         android:layout_margin="10dp"
+        android:background="@drawable/btn_magic"
+
+        android:fontFamily="@font/fatface"
+        android:onClick="onClickAdd"
         android:padding="10dp"
+
+        android:text="@string/btn_add"
+        android:textColor="@color/grey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.408"
@@ -89,14 +92,15 @@
         android:id="@+id/btnInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:onClick="onClickInfo"
-        android:text="@string/btn_info"
-
-        android:textColor="@color/grey"
-
         android:layout_margin="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/btn_magic"
+        android:fontFamily="@font/fatface"
+        android:onClick="onClickInfo"
         android:padding="10dp"
+
+        android:text="@string/btn_info"
+        android:textColor="@color/grey"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
@@ -106,14 +110,15 @@
         android:id="@+id/btnExit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
-        android:onClick="onClickExit"
-        android:text="@string/btn_exit"
-
-        android:textColor="@color/grey"
-
         android:layout_margin="10dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/btn_magic"
+        android:fontFamily="@font/fatface"
+        android:onClick="onClickExit"
         android:padding="10dp"
+
+        android:text="@string/btn_exit"
+        android:textColor="@color/grey"
         app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.408"
