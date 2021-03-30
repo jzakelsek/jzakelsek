@@ -74,7 +74,7 @@
         android:layout_margin="10dp"
         android:background="@drawable/btn_magic"
 
-        android:fontFamily="@font/fatface"
+        android:fontFamily="@font/lang_style"
         android:onClick="onClickAdd"
         android:padding="10dp"
 
@@ -95,7 +95,7 @@
         android:layout_margin="10dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/btn_magic"
-        android:fontFamily="@font/fatface"
+        android:fontFamily="@font/lang_style"
         android:onClick="onClickInfo"
         android:padding="10dp"
 
@@ -113,7 +113,7 @@
         android:layout_margin="10dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/btn_magic"
-        android:fontFamily="@font/fatface"
+        android:fontFamily="@font/lang_style"
         android:onClick="onClickExit"
         android:padding="10dp"
 

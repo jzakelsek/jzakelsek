@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Transporte</string>
+    <string name="btn_insert_new_driver">Geben Sie einen neuen Treiber ein</string>
+    <string name="btn_add">Hinzufügen</string>
+    <string name="btn_info">Information</string>
+    <string name="btn_exit">Ausfahrt</string>
+
+    <string name="btn_open_web">Website</string>
+    <string name="btn_update_old_driver">Aktualisieren Sie den alten Treiber</string>
+    <string name="btn_insert_new_driver_qr">Aktualisieren Sie den alten Treiber QR</string>
+    <string name="btn_exit_main">Ausfahrt</string>
+    <string name="btn_insert_new_driver_main">Geben Sie einen neuen Treiber ein</string>
+    <string name="toast_go">geh für %s!</string>
+
+    <string name="btn_exit_2">Ausfahrt</string>
+
+
+</resources>

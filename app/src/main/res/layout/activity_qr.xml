@@ -11,8 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="onClickExitQr"
-        android:text="Exit"
-
+        android:text="@string/btn_exit_2"
+        android:background="@drawable/btn_magic"
+        android:fontFamily="@font/lang_style"
 
 
 

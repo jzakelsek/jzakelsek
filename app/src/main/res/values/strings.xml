@@ -11,4 +11,5 @@
     <string name="btn_exit_main">EXIT</string>
     <string name="btn_insert_new_driver_main">Insert New Driver</string>
     <string name="toast_go">Go for %s!</string>
+    <string name="btn_exit_2">Exit</string>
 </resources>
