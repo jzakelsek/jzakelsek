@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.upora.data.Driver;
-import com.example.upora.data.Driving;
 
 //zanimiva poveza za gumbe: http://angrytools.com/android/button/
 
@@ -25,8 +24,8 @@ public class ActivityMain extends AppCompatActivity {
 
     private static final int BARCODE_READER_REQUEST_CODE=202;
 
-    Driving driving = new Driving("Bistrica");  //dodamo v Driving
-    Driver inserted;
+    //Driving driving = new Driving("Bistrica");  //dodamo v Driving
+   // Driver inserted;
 
 
 
@@ -36,10 +35,19 @@ public class ActivityMain extends AppCompatActivity {
 
     private static final String TAG = ActivityMain.class.getSimpleName() ;
 
+    private ApplicationMy app;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
+
+
+        app = (ApplicationMy) getApplication();       //objek, svoj da lahko do njega dostopamo
+        //Log.i(TAG, "app vrednost:" + app.a);
+       // app.a=200;
+
     }
 
 
@@ -98,12 +106,13 @@ public class ActivityMain extends AppCompatActivity {
                 Log.i(TAG, "CASSSSSSSSSSSSSSSSSSSSS:" + cas);
                 */
 
-                inserted = new Driver(ime,starost,cas);   //ustvarim novega voznika
-                driving.add(inserted);                      //ga dam v seznam
-
+                //preko app
+                Driver inserted = new Driver(ime,starost,cas);   //ustvarim novega voznika
+                app.getDriving().add(inserted);//.add(inserted);  //driving.add(inserted);                      //ga dam v seznam
+                app.saveData(); //shranemo na telefon, ni treba niti
 
                 Log.i(TAG, "Inserted:" + inserted.toString());     //izpis v Logcat -ni potrebno
-                Log.i(TAG, "Driving Driver:" + driving.toString());
+                Log.i(TAG, "Driving Driver:" + app.getDriving().toString());//driving.toString());
             }
 
         }

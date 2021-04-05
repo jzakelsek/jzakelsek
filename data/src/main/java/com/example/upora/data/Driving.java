@@ -14,7 +14,15 @@ public class Driving implements Sizable{
         driverArrayList = new ArrayList<>();  // vse v javi je privzeto null, zato moramo narediti objekt tipa ArryList -> drugače napaka
     }
 
-    //v listo damo stvari-voznike
+    public Driving() {
+    this("Bistrica");
+
+
+    }
+
+
+
+                          //v listo damo stvari-voznike
     public void add(Driver driver){
         driverArrayList.add(driver);
     }
@@ -81,7 +89,8 @@ public class Driving implements Sizable{
                                              // lahko uporabiš Comperator, če sta npr. dva elementa enakega imena...
     }
 
-
-
-
-}
+    //to rabimo da dolžino v Activity Insert
+    public int getSize() {
+    return driverArrayList.size();
+                          }
+                      }

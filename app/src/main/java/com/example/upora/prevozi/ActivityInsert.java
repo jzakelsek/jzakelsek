@@ -35,11 +35,16 @@ public class ActivityInsert extends AppCompatActivity {
     EditText etTime;
     Button btnAction;
 
+    private ApplicationMy app;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);    //objekti se sami generirajo, da ne pišemo na roke  //iz XML parsanje
+
+        app = (ApplicationMy) getApplication();       //objek, svoj da lahko do njega dostopamo
+        //Log.i(TAG, "app vrednost:" + app.a);
+
 
         etName = findViewById(R.id.etName);
         etAge = findViewById(R.id.etAge);
@@ -137,9 +142,15 @@ public class ActivityInsert extends AppCompatActivity {
         Log.i(TAG, "Pause"+formMode);
     }
 
+
+    //dostop do seznama iz druge aktivnosti
     public void onClickInfo(View view) {
-        Log.i(TAG, "V seznamu je: " + "???" + " elementov");
+        Log.i(TAG, "V seznamu je st. voznikov: " + app.getDriving().getSize());
+        Log.i(TAG, "V seznamu so naslednji vozniki: " + app.getDriving().toString());
+
     }
+
+
 
     public void onClickExit(View view) {
         //finishAffinity();
