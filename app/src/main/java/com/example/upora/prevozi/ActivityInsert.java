@@ -3,7 +3,9 @@ package com.example.upora.prevozi;   //ime tega razreda s paketom vred
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;   //alt+enter
@@ -29,22 +31,34 @@ public class ActivityInsert extends AppCompatActivity {
     //----------------------------------------------------------------------------
 
     int formMode;
+    static int VisitCountInsert;
 
     EditText etName;
     EditText etAge;
     EditText etTime;
     Button btnAction;
 
+    //================================================================================
     private ApplicationMy app;
+    //================================================================================
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);    //objekti se sami generirajo, da ne pišemo na roke  //iz XML parsanje
-
+//================================================================================
         app = (ApplicationMy) getApplication();       //objek, svoj da lahko do njega dostopamo
         //Log.i(TAG, "app vrednost:" + app.a);
+//================================================================================
 
+
+        //============================================================================================================================
+        VisitCountInsert += 1;
+        SharedPreferences sharedPref2 = getSharedPreferences(ActivitySettings.MY_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putInt("CountInsert", VisitCountInsert);
+        editor2.apply();
+        //============================================================================================================================
 
         etName = findViewById(R.id.etName);
         etAge = findViewById(R.id.etAge);
@@ -142,15 +156,17 @@ public class ActivityInsert extends AppCompatActivity {
         Log.i(TAG, "Pause"+formMode);
     }
 
-
-    //dostop do seznama iz druge aktivnosti
+//Application -----    v tej aktivnosti ni seznama, samo tekoči podatki ki jih pošiljam v MainActivity
+                        //seznam je v datoteki, do katerega dostopam preko razreda Application
+//----------------------------------------------------------------------------------------------------------
+    //dostop do seznama iz druge aktivnosti - ActivityMain
     public void onClickInfo(View view) {
         Log.i(TAG, "V seznamu je st. voznikov: " + app.getDriving().getSize());
         Log.i(TAG, "V seznamu so naslednji vozniki: " + app.getDriving().toString());
 
     }
 
-
+//----------------------------------------------------------------------------------------------------------
 
     public void onClickExit(View view) {
         //finishAffinity();

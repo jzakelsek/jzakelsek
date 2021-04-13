@@ -1,13 +1,16 @@
 package com.example.upora.data;
 
 import java.util.Random;
+import java.util.UUID;
 
 //PROJEKT: PREVOZI (vodimo seznam voznikov, da vemo kdo je na vrsti za prevoz v službo)
 
                     //2. ZAHTEVE NALOGE: vsaj 1 razred mora implementirati razred Comparable
 public class Driver implements Comparable<Driver> {  //extends Object -> tega ne pišemo
                     //INTERFACE
-
+//================================================================================
+final String DRIVER_UUID = UUID.randomUUID().toString().replace("-", "");
+//================================================================================
 
     //METODA, KI GENERIRA NAKLJUČEN STRING
     //https://stackoverflow.com/questions/20536566/creating-a-random-string-with-a-z-and-0-9-in-java

@@ -2,18 +2,31 @@ package com.example.upora.data;
 
 import java.util.ArrayList;
 import java.util.Collections;
-                      //uporaba vmesnika
+import java.util.UUID;
+
+//uporaba vmesnika
 public class Driving implements Sizable{
 
     private String name;    //ime skupine vozačev (BISTRICA)
     private ArrayList<Driver> driverArrayList;  // novi seznam z imemnom driverArrayList... private-skrijemo sprem.
                                                // driver ArryList je tipa ArryList
+
+
+
+    //================================================================================
+    // V KONSTUKTOR DODAM UUID
+
     //generiramo konstuktor
     public Driving(String name) {
         this.name = name;
         driverArrayList = new ArrayList<>();  // vse v javi je privzeto null, zato moramo narediti objekt tipa ArryList -> drugače napaka
+        final String DRIVING_UUID = UUID.randomUUID().toString().replace("-", "");
     }
 
+    //================================================================================
+
+
+    //privzeti konstruktor - Aktivnost AplicationMy -onCreate
     public Driving() {
     this("Bistrica");
 

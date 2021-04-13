@@ -3,7 +3,9 @@ package com.example.upora.prevozi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -30,11 +32,24 @@ import com.journeyapps.barcodescanner.BarcodeEncoder;
 
 public class ActivityQr extends AppCompatActivity {
 
-
+    static int VisitCountQr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qr);
+
+
+        //============================================================================================================================
+        VisitCountQr += 1;
+        SharedPreferences sharedPref2 = getSharedPreferences(ActivitySettings.MY_PREFERENCES, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor2 = sharedPref2.edit();
+        editor2.putInt("CountQr", VisitCountQr);
+        editor2.apply();
+        //============================================================================================================================
+
+
+
+
     }
 /*
     public void onClickAddQr(View view) {
