@@ -46,19 +46,20 @@ public class ActivityInsert extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);    //objekti se sami generirajo, da ne pišemo na roke  //iz XML parsanje
+
 //================================================================================
         app = (ApplicationMy) getApplication();       //objek, svoj da lahko do njega dostopamo
         //Log.i(TAG, "app vrednost:" + app.a);
 //================================================================================
 
 
-        //============================================================================================================================
+//============================================================================================================================
         VisitCountInsert += 1;
         SharedPreferences sharedPref2 = getSharedPreferences(ActivitySettings.MY_PREFERENCES, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor2 = sharedPref2.edit();
         editor2.putInt("CountInsert", VisitCountInsert);
         editor2.apply();
-        //============================================================================================================================
+//============================================================================================================================
 
         etName = findViewById(R.id.etName);
         etAge = findViewById(R.id.etAge);
@@ -72,7 +73,7 @@ public class ActivityInsert extends AppCompatActivity {
 
     }
 
-    //---------------------------FromIntent---------------------------------------------------
+    //---------------------------FromIntent-----
     //getIntent -> od Activity metoda
     private void setFormModeFromIntent() {
         formMode = FORM_MODE_INSERT;
@@ -85,7 +86,7 @@ public class ActivityInsert extends AppCompatActivity {
     }
 
 
-    //------------------------------------------------------------------------------
+//---------------
 
     void updateGUI() {
         if (formMode == FORM_MODE_INSERT) {
@@ -95,7 +96,7 @@ public class ActivityInsert extends AppCompatActivity {
         btnAction.setText("Posodobitev");
         }
     }
-//---------------------------------------------------------------------------------------------------------------------------------------------
+//----------------------
     public void onClickAdd(View view) {   //dodam metodo
         try {
 
@@ -158,7 +159,7 @@ public class ActivityInsert extends AppCompatActivity {
 
 //Application -----    v tej aktivnosti ni seznama, samo tekoči podatki ki jih pošiljam v MainActivity
                         //seznam je v datoteki, do katerega dostopam preko razreda Application
-//----------------------------------------------------------------------------------------------------------
+//================================================================================
     //dostop do seznama iz druge aktivnosti - ActivityMain
     public void onClickInfo(View view) {
         Log.i(TAG, "V seznamu je st. voznikov: " + app.getDriving().getSize());
@@ -166,7 +167,7 @@ public class ActivityInsert extends AppCompatActivity {
 
     }
 
-//----------------------------------------------------------------------------------------------------------
+//================================================================================
 
     public void onClickExit(View view) {
         //finishAffinity();
