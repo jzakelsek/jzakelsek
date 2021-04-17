@@ -11,7 +11,7 @@
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="104dp"
+        tools:layout_editor_absoluteX="-145dp"
         tools:layout_editor_absoluteY="0dp">
 
 
@@ -55,51 +55,46 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnUpdate" />
 
+
         <Button
             android:id="@+id/btnNew"
             style="@style/AppTheme.Button"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
 
 
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-
             android:fontFamily="@font/lang_style"
+
             android:onClick="onClickOpenInsertFormForResult"
             android:padding="@dimen/my_padding"
-
             android:text="@string/btn_insert_new_driver_main"
             android:textColor="@color/grey"
             app:layout_constraintBottom_toTopOf="@+id/btnNewQr"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toBottomOf="@+id/btnDrivers" />
 
         <Button
             android:id="@+id/btnNewQr"
             style="@style/AppTheme.Button"
             android:layout_width="250dp"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="10dp"
+
             android:layout_marginBottom="10dp"
 
             android:fontFamily="@font/lang_style"
-
             android:onClick="onClickOpenInsertFormForResultQr"
             android:padding="@dimen/my_padding"
-
             android:text="@string/btn_insert_new_driver_qr"
-
             android:textColor="@color/grey"
             app:layout_constraintBottom_toTopOf="@+id/btnUpdate"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnNew" />
-
 
         <Button
             android:id="@+id/btnUpdate"
@@ -119,10 +114,8 @@
 
             app:layout_constraintBottom_toTopOf="@+id/btnWeb"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.503"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnNewQr" />
-
 
         <Button
             android:id="@+id/btnExitMain"
@@ -172,7 +165,7 @@
             android:id="@+id/btnSettings"
             style="@style/AppTheme.Button"
             android:layout_width="246dp"
-            android:layout_height="43dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/lang_style"
@@ -183,9 +176,26 @@
             android:textColor="@color/grey"
             app:layout_constraintBottom_toTopOf="@+id/btnExitMain"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.515"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btnInfoApp" />
+
+        <Button
+            android:id="@+id/btnDrivers"
+            style="@style/AppTheme.Button"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="10dp"
+
+            android:fontFamily="@font/lang_style"
+            android:text="Drivers"
+            android:textColor="@color/grey"
+            android:onClick="onClickOpenDriversForm"
+
+            app:layout_constraintBottom_toTopOf="@+id/btnNew"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

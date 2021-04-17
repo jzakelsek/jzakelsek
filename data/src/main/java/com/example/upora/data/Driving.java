@@ -106,4 +106,9 @@ public class Driving implements Sizable{
     public int getSize() {
     return driverArrayList.size();
                           }
-                      }
+
+
+    public Driver getDriverAtPos(int position) {
+        return driverArrayList.get(position);
+    }
+}

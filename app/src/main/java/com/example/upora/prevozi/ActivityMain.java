@@ -26,6 +26,7 @@ public class ActivityMain extends AppCompatActivity {
 
     private static final int BARCODE_READER_REQUEST_CODE=202;
     private static final int SETTINGS_READER_REQUEST_CODE=303;
+    private static final int DRIVERS_READER_REQUEST_CODE=404;
 
     //Driving driving = new Driving("Bistrica");  //dodamo v Driving
    // Driver inserted;
@@ -172,7 +173,13 @@ public class ActivityMain extends AppCompatActivity {
 
 
     }
+
+    public void onClickOpenDriversForm(View view) {
+        Intent intent = new Intent(ActivityMain.this, ActivityDrivers.class);
+        //startActivity(intent);
+        startActivityForResult(intent, DRIVERS_READER_REQUEST_CODE);
     }
+}
 
 
 

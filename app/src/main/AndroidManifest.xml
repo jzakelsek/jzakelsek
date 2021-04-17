@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design">
-        <activity android:name=".ActivitySettings"></activity>
+        <activity android:name=".ActivityDrivers"></activity>
+        <activity android:name=".ActivitySettings" />
         <activity android:name=".ActivityQr" />
         <activity android:name=".ActivityInfo" />
         <activity
