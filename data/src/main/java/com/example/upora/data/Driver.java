@@ -16,7 +16,7 @@ final String DRIVER_UUID = UUID.randomUUID().toString().replace("-", "");
     //https://stackoverflow.com/questions/20536566/creating-a-random-string-with-a-z-and-0-9-in-java
     public static String generateRandomChars() {
         String candidateChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-        int length = 10;
+        int length = 4;
         StringBuilder sb = new StringBuilder();
         Random random = new Random();
         for (int i = 0; i < length; i++) {
@@ -30,8 +30,9 @@ final String DRIVER_UUID = UUID.randomUUID().toString().replace("-", "");
             int min = 10;
             int max = 100;
             String name = generateRandomChars();
-            int age = (int) ((Math.random() * (max - min)) + min);
-            double time = ((Math.random() * (max - min)) + min);
+            int age = new Random().nextInt(20);
+            int time2 = new Random().nextInt(20);
+            double time = new Double(time2);
             return new Driver(name, age, time);
         };
 
@@ -61,8 +62,12 @@ final String DRIVER_UUID = UUID.randomUUID().toString().replace("-", "");
         return name;
     }
 
+    public int getAge() {
+                            return age;
+                        }
 
-    //4. ZAHTEVE NALOGE:
+
+                        //4. ZAHTEVE NALOGE:
     // prekrijemo metodo iz Objecta  -> Generate-toString
     @Override
     public String toString() {

@@ -111,4 +111,22 @@ public class Driving implements Sizable{
     public Driver getDriverAtPos(int position) {
         return driverArrayList.get(position);
     }
+
+
+
+    public void removeAT(int position) {
+        driverArrayList.remove(position);
+    }
+
+    public void setDriverAtPos(int poz, Driver inserted) {
+        driverArrayList.set(poz, inserted);
+    }
+
+    /*
+    public void zapisiUpdate(int position, ime, starost, cas) {
+        driverArrayList.get(position);
+    }*/
+
+
 }
+

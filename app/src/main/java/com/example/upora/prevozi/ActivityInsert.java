@@ -14,6 +14,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.upora.data.Driver;
+import com.example.upora.data.Driving;
+
 
 public class ActivityInsert extends AppCompatActivity {
     public static final int ACTIVITY_ID=101;  //vsaka aktivnost mora met svoj id
@@ -22,6 +25,8 @@ public class ActivityInsert extends AppCompatActivity {
 
     //----------------------------------------------------------------------------
     public static final String FORM_MODE_ID = "FORM_MODE_ID";  //key value
+    public static final String POZICIJA = "POZICIJA";
+
     public static final int FORM_MODE_INSERT = 0;
     public static final int FORM_MODE_UPDATE = 1;
 
@@ -31,6 +36,8 @@ public class ActivityInsert extends AppCompatActivity {
     //----------------------------------------------------------------------------
 
     int formMode;
+    int poz;
+
     static int VisitCountInsert;
 
     EditText etName;
@@ -46,6 +53,8 @@ public class ActivityInsert extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);    //objekti se sami generirajo, da ne pišemo na roke  //iz XML parsanje
+
+
 
 //================================================================================
         app = (ApplicationMy) getApplication();       //objek, svoj da lahko do njega dostopamo
@@ -76,11 +85,14 @@ public class ActivityInsert extends AppCompatActivity {
     //---------------------------FromIntent-----
     //getIntent -> od Activity metoda
     private void setFormModeFromIntent() {
-        formMode = FORM_MODE_INSERT;
-        Bundle extras = getIntent().getExtras();        //ta dobi namig-intent v obliki key-value
+        formMode = FORM_MODE_INSERT;                  // FORM_MODE_INSERT = 0;
+        Bundle extras = getIntent().getExtras();      //ta dobi namig-intent v obliki key-value
         if (extras != null) {
-            formMode = extras.getInt(FORM_MODE_ID);
+            formMode = extras.getInt(FORM_MODE_ID);         //FORM_MODE_ID = "FORM_MODE_ID";
+            poz = extras.getInt(POZICIJA);
             Log.i(TAG, "Set form mode:" + formMode);
+            //Log.i(TAG, "Pozicija:" + poz);
+
 
         }
     }
@@ -89,11 +101,15 @@ public class ActivityInsert extends AppCompatActivity {
 //---------------
 
     void updateGUI() {
-        if (formMode == FORM_MODE_INSERT) {
+        if (formMode == FORM_MODE_INSERT) {   // FORM_MODE_INSERT = 0;
             btnAction.setText("Vnos");
             }
-        if(formMode==FORM_MODE_UPDATE) {
+        if(formMode==FORM_MODE_UPDATE) {      //FORM_MODE_UPDATE = 1;
         btnAction.setText("Posodobitev");
+
+
+
+
         }
     }
 //----------------------
@@ -111,9 +127,23 @@ public class ActivityInsert extends AppCompatActivity {
         Driver inserted = new Driver(etName.getText().toString(), Integer.parseInt(etAge.getText().toString()), Double.parseDouble(etTime.getText().toString()));   //branje vnosnih polj
         driving.add(inserted);
 */
+
+
+
             String ime=etName.getText().toString();
             int starost = Integer.parseInt(etAge.getText().toString());
             double cas = Double.parseDouble(etTime.getText().toString());
+
+            if(formMode==FORM_MODE_UPDATE){
+                Driver inserted = new Driver(ime,starost,cas);
+
+                app.getDriving().setDriverAtPos(poz, inserted);
+                //Driver tmp = app.getDriving().getDriverAtPos(poz);
+
+
+                app.saveData(); //shranemo na telefon, ni treba niti
+
+            }
 
             Intent intent = new Intent();
             intent.putExtra(ActivityMain.KEY_NAME, ime);
@@ -126,7 +156,11 @@ public class ActivityInsert extends AppCompatActivity {
 
             finish();
 
-            Toast.makeText(this, "New driver is inserted", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Voznik je uspesno posodobljen", Toast.LENGTH_LONG).show();
+
+
+
+
 
             //returnValue(DATA_UPDATE); //da je OK
 

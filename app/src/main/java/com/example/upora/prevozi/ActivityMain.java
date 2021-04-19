@@ -11,10 +11,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+import java.util.Random;
 
 import com.example.upora.data.Driver;
 
+import static com.example.upora.data.Driver.getRandomDriver;
+
 //zanimiva poveza za gumbe: http://angrytools.com/android/button/
+
+
 
 public class ActivityMain extends AppCompatActivity {
 
@@ -117,13 +122,31 @@ public class ActivityMain extends AppCompatActivity {
                 */
 
                 //preko app
+
+
+
+
+
+
+
                 Driver inserted = new Driver(ime,starost,cas);   //ustvarim novega voznika
+
+
 
    //Application  - // do seznama lahko dostopamo iz druge aktivnosti - ActivityMain
  //============================================================================================================================
                 app.getDriving().add(inserted);//.add(inserted);  //driving.add(inserted);                      //ga dam v seznam
                 app.saveData(); //shranemo na telefon, ni treba niti
   //============================================================================================================================
+
+                    for (int i = 0; i < 100; i++) {
+                        app.getDriving().add(getRandomDriver());
+                        app.saveData();
+
+                    }
+
+
+
                 Log.i(TAG, "Inserted:" + inserted.toString());     //izpis v Logcat -ni potrebno
                 Log.i(TAG, "Driving Driver:" + app.getDriving().toString());//driving.toString());
             }
